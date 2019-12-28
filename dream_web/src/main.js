@@ -5,11 +5,14 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import { Button, Select } from 'element-ui'
+// 引入echarts
+import echarts from 'echarts'
 
 Vue.config.productionTip = false
 // Vue.use(ElementUI)
 Vue.component(Button.name, Button)
 Vue.component(Select.name, Select)
+Vue.prototype.$echarts = echarts
 
 new Vue({
   router,

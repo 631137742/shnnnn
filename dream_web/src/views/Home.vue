@@ -1,7 +1,7 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.jpg">
     <HelloWorld msg="这是home组件传给公共组件的值"/>
+    <img alt="Vue logo" src="../assets/logo.jpg">
   </div>
 </template>
 
