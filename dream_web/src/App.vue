@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <Header />
     <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
@@ -7,6 +8,17 @@
     <router-view/>
   </div>
 </template>
+
+<script>
+import Header from '@/components/Header.vue'
+
+export default {
+  name: 'app',
+  components: {
+    Header
+  }
+}
+</script>
 
 <style lang="less">
 html, body, div, span, applet, object, iframe,
@@ -28,6 +40,13 @@ time, mark, audio, video {
   font-size: 100%;
   font: inherit;
   vertical-align: baseline;
+}
+.icon {
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,
