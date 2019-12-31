@@ -2,10 +2,8 @@
   <div id="app">
     <Header />
     <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+      <router-view />
     </div>
-    <router-view/>
   </div>
 </template>
 
@@ -16,6 +14,7 @@ export default {
   name: 'app',
   components: {
     Header
+    // Carousel
   }
 }
 </script>
@@ -80,7 +79,7 @@ table {
 }
 
 #nav {
-  padding: 30px;
+  background-image: linear-gradient(to left, #532745, #14092f);
 
   a {
     font-weight: bold;
