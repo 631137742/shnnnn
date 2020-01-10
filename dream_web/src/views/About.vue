@@ -1,13 +1,21 @@
 <template>
   <div class="about">
+    <Header />
+    <Breadcrumb />
     <div id="myChart" style="width: 600px;height:400px;"></div>
   </div>
 </template>
 
 <script>
+import Header from '@/components/Header.vue'
+import Breadcrumb from '@/views/index/Breadcrumb.vue'
+
 export default {
   name: 'about',
-
+  components: {
+    Header,
+    Breadcrumb
+  },
   mounted () {
     this.drawColumn()
   },

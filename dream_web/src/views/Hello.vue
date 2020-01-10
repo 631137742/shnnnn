@@ -1,27 +1,23 @@
 <template>
-  <div id="index" class="index-bg">
+  <div id="hello">
     <Header />
-    <Carousel />
     <Breadcrumb />
+    <h1>123</h1>
   </div>
 </template>
 
 <script>
 import Header from '@/components/Header.vue'
-import Carousel from '@/views/index/Carousel.vue'
 import Breadcrumb from '@/views/index/Breadcrumb.vue'
-
 export default {
-  name: 'index',
+  name: 'hello',
   components: {
     Header,
-    Carousel,
     Breadcrumb
   }
 }
 </script>
-<style>
-  .index-bg {
-    background-image: linear-gradient(to left, #532745, #14092f);
-  }
+
+<style scoped>
+
 </style>

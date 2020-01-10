@@ -1,5 +1,5 @@
 <template>
-  <div class="Carousel">
+  <div id="carousel">
     <el-row :gutter="10">
       <el-col :xs="5" :sm="5" :md="5" :lg="5" :xl="5">
         <div class="grid-content bg-purple-light hidden-sm-and-down aside-row-left"></div>
@@ -16,8 +16,8 @@
         </div>
       </el-col>
       <el-col :xs="5" :sm="5" :md="5" :lg="5" :xl="5">
-        <div class="grid-content bg-purple-light hidden-sm-and-down aside-row-right"></div>
-  </el-col>
+            <div class="grid-content bg-purple-light hidden-sm-and-down aside-row-right"></div>
+      </el-col>
     </el-row>
   </div>
 </template>
@@ -25,7 +25,7 @@
 <script>
 import 'element-ui/lib/theme-chalk/display.css'
 export default {
-  name: 'Carousel',
+  name: 'carousel',
   components: {
   },
   data () {

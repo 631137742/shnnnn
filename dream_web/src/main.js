@@ -6,7 +6,24 @@ import router from './router'
 import store from './store'
 // 引入echarts
 import echarts from 'echarts'
-import { Button, Select, Row, Col, Input, Dropdown, DropdownMenu, DropdownItem, Carousel, CarouselItem } from 'element-ui'
+import {
+  Button,
+  Select,
+  Row,
+  Col,
+  Input,
+  Dropdown,
+  DropdownMenu,
+  DropdownItem,
+  Carousel,
+  CarouselItem,
+  Header,
+  Container,
+  Aside,
+  Main,
+  Breadcrumb,
+  BreadcrumbItem
+} from 'element-ui'
 // 引入iconfont
 import './assets/iconfont/iconfont.css'
 import '@/assets/iconfont/iconfont'
@@ -23,6 +40,12 @@ Vue.component(DropdownMenu.name, DropdownMenu)
 Vue.component(DropdownItem.name, DropdownItem)
 Vue.component(Carousel.name, Carousel)
 Vue.component(CarouselItem.name, CarouselItem)
+Vue.component(Header.name, Header)
+Vue.component(Container.name, Container)
+Vue.component(Aside.name, Aside)
+Vue.component(Main.name, Main)
+Vue.component(Breadcrumb.name, Breadcrumb)
+Vue.component(BreadcrumbItem.name, BreadcrumbItem)
 Vue.prototype.$echarts = echarts
 
 new Vue({

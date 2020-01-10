@@ -2,12 +2,14 @@
   <div class="header">
     <el-row class="header-row" :gutter="10">
       <el-col :xs="12" :sm="4" :md="4" :lg="4" :xl="4">
-        <div class="grid-content bg-logo"></div>
+        <router-link to="/">
+          <div class="grid-content bg-logo"></div>
+        </router-link>
       </el-col>
       <el-col :xs="0" :sm="15" :md="8" :lg="8" :xl="8">
         <div class="grid-content bg-purple-light header-button">
-          <router-link to="/">发现</router-link>
-          <router-link to="/">关注</router-link>
+          <router-link to="/about">发现</router-link>
+          <router-link to="/hello">关注</router-link>
           <router-link to="/">消息</router-link>
         </div>
       </el-col>
