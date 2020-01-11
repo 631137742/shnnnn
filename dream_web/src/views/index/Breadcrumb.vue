@@ -1,18 +1,27 @@
 <template>
-  <el-container id="breadcrumb">
-    <el-header>
-      <el-breadcrumb separator-class="el-icon-arrow-right">
-        <el-breadcrumb-item v-for="item in levelList" :key="item.path" :to="item.path">{{item.meta.title}}</el-breadcrumb-item>
-      </el-breadcrumb>
-    </el-header>
-    <el-container>
-      <el-aside width="200px">Aside</el-aside>
-      <el-main>Main</el-main>
-    </el-container>
-  </el-container>
+  <el-row :gutter="10">
+    <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
+      <div class="grid-content bg-purple hidden-xs-only">
+        <el-container id="breadcrumb">
+          <el-header>
+            <el-breadcrumb separator-class="el-icon-arrow-right">
+              <el-breadcrumb-item v-for="item in levelList" :key="item.path" :to="item.path">{{item.meta.title}}</el-breadcrumb-item>
+            </el-breadcrumb>
+          </el-header>
+        </el-container>
+      </div>
+    </el-col>
+    <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
+      <el-container>
+        <el-aside width="200px">Aside</el-aside>
+        <el-main>Main</el-main>
+      </el-container>
+    </el-col>
+  </el-row>
 </template>
 
 <script>
+import 'element-ui/lib/theme-chalk/display.css'
 export default {
   name: 'breadcrumb',
   data () {
@@ -33,9 +42,10 @@ export default {
       let matched = this.$route.matched.filter(item => item.name)
       const first = matched[0]
       if (first && first.name.trim().toLocaleLowerCase() !== 'App'.toLocaleLowerCase()) {
-        matched = [{ path: '/app', meta: { title: 'App' } }].concat(matched)
+        matched = [{ path: '', meta: { title: 'App' } }].concat(matched)
       }
       this.levelList = matched
+      console.log(matched)
     }
   }
 }

@@ -12,25 +12,23 @@ export default new VueRouter({
   routes: [
     {
       path: '/',
+      redirect: 'app',
       name: 'App',
       component: App,
-      meta: { title: '首页', icon: '', noCache: true },
+      meta: { title: '首页', icon: '/', noCache: true },
       children: [
         {
           path: '',
-          component: Index,
-          name: 'App'
+          component: Index
         },
         {
           path: '/about',
-          // redirect: 'about',
           name: 'About',
           component: About,
           meta: { title: 'about页', icon: 'about', noCache: true }
         },
         {
           path: '/hello',
-          // redirect: 'about',
           name: 'Hello',
           component: Hello,
           meta: { title: 'hello页', icon: 'hello' }
