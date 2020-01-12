@@ -1,23 +1,19 @@
 <template>
-  <el-row :gutter="10">
-    <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
-      <div class="grid-content bg-purple hidden-xs-only">
-        <el-container id="breadcrumb">
-          <el-header>
-            <el-breadcrumb separator-class="el-icon-arrow-right">
-              <el-breadcrumb-item v-for="item in levelList" :key="item.path" :to="item.path">{{item.meta.title}}</el-breadcrumb-item>
-            </el-breadcrumb>
-          </el-header>
-        </el-container>
-      </div>
-    </el-col>
-    <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
-      <el-container>
-        <el-aside width="200px">Aside</el-aside>
-        <el-main>Main</el-main>
-      </el-container>
-    </el-col>
-  </el-row>
+  <div class="breadcrumb">
+    <el-row :gutter="10">
+      <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
+        <div class="grid-content bg-purple hidden-xs-only">
+          <el-container id="breadcrumb">
+            <el-header>
+              <el-breadcrumb separator-class="el-icon-arrow-right">
+                <el-breadcrumb-item v-for="item in levelList" :key="item.path" :to="item.path">{{item.meta.title}}</el-breadcrumb-item>
+              </el-breadcrumb>
+            </el-header>
+          </el-container>
+        </div>
+      </el-col>
+    </el-row>
+  </div>
 </template>
 
 <script>
@@ -60,21 +56,6 @@ export default {
     display: flex;
     align-items: center;
   }
-
-  .el-aside {
-    background-color: #D3DCE6;
-    color: #333;
-    text-align: center;
-    line-height: 200px;
-  }
-
-  .el-main {
-    background-color: #E9EEF3;
-    color: #333;
-    text-align: center;
-    line-height: 160px;
-  }
-
   body > .el-container {
     margin-bottom: 40px;
   }

@@ -22,7 +22,8 @@ import {
   Aside,
   Main,
   Breadcrumb,
-  BreadcrumbItem
+  BreadcrumbItem,
+  Card
 } from 'element-ui'
 // 引入iconfont
 import './assets/iconfont/iconfont.css'
@@ -46,6 +47,7 @@ Vue.component(Aside.name, Aside)
 Vue.component(Main.name, Main)
 Vue.component(Breadcrumb.name, Breadcrumb)
 Vue.component(BreadcrumbItem.name, BreadcrumbItem)
+Vue.component(Card.name, Card)
 Vue.prototype.$echarts = echarts
 
 new Vue({

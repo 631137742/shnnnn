@@ -1,0 +1,157 @@
+<template>
+  <div class="cart">
+    <el-row :gutter="10">
+      <el-col :xs="4" :sm="2" :md="3" :lg="3" :xl="3">
+        <div class="grid-content bg-purple hidden-md-only"></div>
+      </el-col>
+      <el-col :xs="24" :sm="24" :md="6" :lg="4" :xl="4">
+        <div class="grid-content bg-purple">
+          <el-card class="box-card">
+            <div v-for="item in images" :key="item" class="text item">
+              <router-link to="#"><img class="board-images" :src="item" alt="加载失败..."></router-link>
+            </div>
+          </el-card>
+        </div>
+      </el-col>
+      <el-col :xs="24" :sm="24" :md="12" :lg="10" :xl="10">
+        <div class="grid-content bg-purple">
+          <el-card class="box-card">
+            <div v-for="o in 4" :key="o" class="text item cart-baseline">
+              <router-link class="cart-title" to="#">标题</router-link>
+              <p class="abstract">{{'列表内容 ' + o }}</p>
+              <div class="meta">
+                <span>浏览量</span>
+                <router-link to="#">用户名</router-link>
+                <router-link to="#">评论</router-link>
+                <span>
+                  <i>赞</i>
+                </span>
+              </div>
+            </div>
+          </el-card>
+        </div>
+      </el-col>
+      <el-col :xs="24" :sm="24" :md="6" :lg="4" :xl="4">
+        <div class="grid-content bg-purple hidden-sm-and-down">
+          <el-card class="box-card">
+            <h2>推荐作者</h2>
+            <div v-for="item in recommend" :key="item" class="text item aside-list">
+              <router-link to="#">
+                <img class="head-portrait" :src="item.images" alt="头像加载失败">
+                <div class="aside-lally">
+                  <h3>{{'列表内容 ' + item.title }}</h3>
+                  <p>1k+喜欢</p>
+                </div>
+              </router-link>
+              <router-link class="aside-follow" to="#">关注+</router-link>
+            </div>
+          </el-card>
+        </div>
+      </el-col>
+      <el-col :xs="4" :sm="2" :md="3" :lg="3" :xl="3">
+        <div class="grid-content bg-purple hidden-md-only"></div>
+      </el-col>
+    </el-row>
+  </div>
+</template>
+
+<script>
+import 'element-ui/lib/theme-chalk/display.css'
+export default {
+  name: 'cart',
+  components: {
+  },
+  data () {
+    return {
+      images: [
+        require('../../assets/banner-s-club-aa8bdf19f8cf729a759da42e4a96f366.png'),
+        require('../../assets/banner-s-club-aa8bdf19f8cf729a759da42e4a96f366.png')
+      ],
+      recommend: [
+        { title: '作者1', images: require('../../assets/head-portrait.png') },
+        { title: '作者2', images: require('../../assets/head-portrait1.png') }
+      ]
+    }
+  }
+}
+</script>
+
+<style>
+  .text {
+    font-size: 14px;
+  }
+
+  .item {
+    padding: 18px 0;
+  }
+
+  .box-card {
+    width: 100%;
+  }
+  .cart-baseline {
+    border-bottom: 1px solid #f0f0f0;
+  }
+  .board-images {
+    width: 100%;
+  }
+  .cart-title {
+    color: black;
+    font-size: 18px;
+    text-decoration: none;
+    margin: -7px 0 4px;
+    display: inherit;
+    font-weight: 700;
+    line-height: 1.5;
+  }
+  .abstract {
+    color: #999;
+    font-size: 13px;
+    line-height: 24px;
+  }
+  .meta a {
+    color: black;
+    text-decoration: none;
+    margin-right: 10px;
+  }
+  .meta span {
+    margin-right: 10px;
+  }
+  .aside-list {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+  .aside-list a {
+    color: black;
+    cursor: pointer;
+    text-decoration: none;
+    display: flex;
+    align-content: center;
+    flex-wrap: nowrap;
+  }
+  .aside-list .aside-follow {
+    margin-left: 10%;
+    align-items: flex-end;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .aside-list a .head-portrait {
+    width: 48px;
+    height: 48px;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+  }
+  .aside-list a .aside-lally {
+    margin: auto 10px;
+    text-overflow: ellipsis;
+    white-space:nowrap;
+    overflow:hidden;
+  }
+  .aside-list a .aside-lally p {
+    color: #969696;
+    font-size: 12px;
+    margin-top: 10px;
+  }
+</style>
