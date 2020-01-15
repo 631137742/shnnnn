@@ -20,11 +20,31 @@
               <router-link class="cart-title" to="#">标题</router-link>
               <p class="abstract">{{'列表内容 ' + o }}</p>
               <div class="meta">
-                <span>浏览量</span>
-                <router-link to="#">用户名</router-link>
-                <router-link to="#">评论</router-link>
                 <span>
-                  <i>赞</i>
+                  <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#iconicon-test15"></use>
+                  </svg>
+                  浏览量
+                </span>
+                <router-link to="#">
+                  <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icongeren"></use>
+                  </svg>
+                  用户名
+                </router-link>
+                <router-link to="#">
+                  <svg class="icon icon-image" aria-hidden="true" :plain="true">
+                    <use xlink:href="#iconbianpinghuatubiaosheji-14"></use>
+                  </svg>
+                  评论
+                </router-link>
+                <span>
+                  <i>
+                    <svg class="icon icon-image" aria-hidden="true" :plain="true">
+                      <use xlink:href="#iconbianpinghuatubiaosheji-"></use>
+                    </svg>
+                    赞
+                  </i>
                 </span>
               </div>
             </div>
@@ -34,7 +54,12 @@
       <el-col :xs="24" :sm="24" :md="6" :lg="4" :xl="4">
         <div class="grid-content bg-purple hidden-sm-and-down">
           <el-card class="box-card">
-            <h2>推荐作者</h2>
+            <h2>
+              <svg class="icon icon-image icon-user" aria-hidden="true" :plain="true">
+                <use xlink:href="#iconbianpinghuatubiaosheji-9"></use>
+              </svg>
+              推荐作者
+            </h2>
             <div v-for="item in recommend" :key="item.id" class="text item aside-list">
               <router-link to="#">
                 <img class="head-portrait" :src="item.images" alt="头像加载失败">
@@ -65,7 +90,9 @@ export default {
     return {
       images: [
         { id: 1, images: require('../../assets/banner-s-club-aa8bdf19f8cf729a759da42e4a96f366.png') },
-        { id: 2, images: require('../../assets/banner-s-club-aa8bdf19f8cf729a759da42e4a96f366.png') }
+        { id: 2, images: require('../../assets/banner-s-club-aa8bdf19f8cf729a759da42e4a96f366.png') },
+        { id: 3, images: require('../../assets/banner-s-club-aa8bdf19f8cf729a759da42e4a96f366.png') },
+        { id: 4, images: require('../../assets/banner-s-club-aa8bdf19f8cf729a759da42e4a96f366.png') }
       ],
       recommend: [
         { id: 1, title: '作者1', images: require('../../assets/head-portrait.png') },
@@ -77,6 +104,11 @@ export default {
 </script>
 
 <style>
+  .icon-user {
+    width: 2em;
+    height: 2em;
+    margin-right: 1em;
+  }
   .text {
     font-size: 14px;
   }
@@ -87,6 +119,12 @@ export default {
 
   .box-card {
     width: 100%;
+  }
+  .box-card h2 {
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    height:100%;
   }
   .cart-baseline {
     border-bottom: 1px solid #f0f0f0;
@@ -107,6 +145,7 @@ export default {
     color: #999;
     font-size: 13px;
     line-height: 24px;
+    margin-bottom: 1em;
   }
   .meta a {
     color: black;

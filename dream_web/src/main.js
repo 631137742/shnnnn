@@ -13,6 +13,11 @@ import {
   Row,
   Col,
   Input,
+  Radio,
+  RadioGroup,
+  RadioButton,
+  Tabs,
+  TabPane,
   Dropdown,
   DropdownMenu,
   DropdownItem,
@@ -24,7 +29,8 @@ import {
   Main,
   Breadcrumb,
   BreadcrumbItem,
-  Card
+  Card,
+  Message
 } from 'element-ui'
 // 引入iconfont
 import './assets/iconfont/iconfont.css'
@@ -37,6 +43,11 @@ Vue.component(Select.name, Select)
 Vue.component(Row.name, Row)
 Vue.component(Col.name, Col)
 Vue.use(Input)
+Vue.component(Radio.name, Radio)
+Vue.component(RadioGroup.name, RadioGroup)
+Vue.component(RadioButton.name, RadioButton)
+Vue.component(Tabs.name, Tabs)
+Vue.component(TabPane.name, TabPane)
 Vue.component(Dropdown.name, Dropdown)
 Vue.component(DropdownMenu.name, DropdownMenu)
 Vue.component(DropdownItem.name, DropdownItem)
@@ -49,7 +60,10 @@ Vue.component(Main.name, Main)
 Vue.component(Breadcrumb.name, Breadcrumb)
 Vue.component(BreadcrumbItem.name, BreadcrumbItem)
 Vue.component(Card.name, Card)
+Vue.component(Message.name, Message)
+
 Vue.prototype.$echarts = echarts
+Vue.prototype.$message = Message
 
 new Vue({
   router,

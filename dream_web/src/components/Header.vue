@@ -9,7 +9,7 @@
       <el-col :xs="0" :sm="15" :md="8" :lg="8" :xl="8">
         <div class="grid-content bg-purple-light header-button">
           <router-link to="/about">发现</router-link>
-          <router-link to="/hello">关注</router-link>
+          <router-link to="/attention">关注</router-link>
           <router-link to="/">消息</router-link>
         </div>
       </el-col>
@@ -34,11 +34,10 @@
               </i>
             </span>
             <el-dropdown-menu slot="dropdown">
-              <el-dropdown-item command="a" divided>黄金糕</el-dropdown-item>
-              <el-dropdown-item command="b" divided>狮子头</el-dropdown-item>
-              <el-dropdown-item command="c" divided>螺蛳粉</el-dropdown-item>
-              <el-dropdown-item command="d" divided disabled>双皮奶</el-dropdown-item>
-              <el-dropdown-item command="e" divided>蚵仔煎</el-dropdown-item>
+              <el-dropdown-item command="a" divided>我的主页</el-dropdown-item>
+              <el-dropdown-item command="b" divided>修改密码</el-dropdown-item>
+              <el-dropdown-item command="c" divided>设置</el-dropdown-item>
+              <el-dropdown-item command="d" divided disabled>退出</el-dropdown-item>
             </el-dropdown-menu>
           </el-dropdown>
         </div>

@@ -2,8 +2,8 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home'
 import Index from '../views/index/Index'
-import About from '../views/attention/About'
-import Hello from '../views/Hello'
+import About from '../views/Find/About'
+import Attention from '../views/attention/Attention'
 
 Vue.use(VueRouter)
 
@@ -28,10 +28,10 @@ export default new VueRouter({
           meta: { title: 'about页', icon: 'about', noCache: true }
         },
         {
-          path: '/hello',
-          name: 'Hello',
-          component: Hello,
-          meta: { title: 'hello页', icon: 'hello' }
+          path: '/attention',
+          name: 'Attention',
+          component: Attention,
+          meta: { title: 'attention页', icon: 'attention' }
         }
       ]
     }
