@@ -1,19 +1,16 @@
 <template>
-  <div class="about">
-    <Header />
+  <div id="about">
     <Breadcrumb />
     <div id="myChart" style="width: 600px;height:400px;"></div>
   </div>
 </template>
 
 <script>
-import Header from '@/components/Header.vue'
-import Breadcrumb from '@/views/index/Breadcrumb.vue'
+import Breadcrumb from '@/components/Breadcrumb.vue'
 
 export default {
   name: 'about',
   components: {
-    Header,
     Breadcrumb
   },
   mounted () {
@@ -46,11 +43,11 @@ export default {
 }
 </script>
 <style>
-.about {
-  display: flex;
-  flex-flow: column nowrap;
-}
-#myChart {
-  align-self: center;
-}
+  #about {
+    display: flex;
+    flex-flow: column nowrap;
+  }
+  #myChart {
+    align-self: center;
+  }
 </style>

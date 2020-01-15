@@ -1,5 +1,5 @@
 <template>
-  <div class="cart">
+  <div id="cart">
     <el-row :gutter="10">
       <el-col :xs="4" :sm="2" :md="3" :lg="3" :xl="3">
         <div class="grid-content bg-purple hidden-md-only"></div>
@@ -7,8 +7,8 @@
       <el-col :xs="24" :sm="24" :md="6" :lg="4" :xl="4">
         <div class="grid-content bg-purple">
           <el-card class="box-card">
-            <div v-for="item in images" :key="item" class="text item">
-              <router-link to="#"><img class="board-images" :src="item" alt="加载失败..."></router-link>
+            <div v-for="item in images" :key="item.id" class="text item">
+              <router-link to="#"><img class="board-images" :src="item.images" alt="加载失败..."></router-link>
             </div>
           </el-card>
         </div>
@@ -35,7 +35,7 @@
         <div class="grid-content bg-purple hidden-sm-and-down">
           <el-card class="box-card">
             <h2>推荐作者</h2>
-            <div v-for="item in recommend" :key="item" class="text item aside-list">
+            <div v-for="item in recommend" :key="item.id" class="text item aside-list">
               <router-link to="#">
                 <img class="head-portrait" :src="item.images" alt="头像加载失败">
                 <div class="aside-lally">
@@ -64,12 +64,12 @@ export default {
   data () {
     return {
       images: [
-        require('../../assets/banner-s-club-aa8bdf19f8cf729a759da42e4a96f366.png'),
-        require('../../assets/banner-s-club-aa8bdf19f8cf729a759da42e4a96f366.png')
+        { id: 1, images: require('../../assets/banner-s-club-aa8bdf19f8cf729a759da42e4a96f366.png') },
+        { id: 2, images: require('../../assets/banner-s-club-aa8bdf19f8cf729a759da42e4a96f366.png') }
       ],
       recommend: [
-        { title: '作者1', images: require('../../assets/head-portrait.png') },
-        { title: '作者2', images: require('../../assets/head-portrait1.png') }
+        { id: 1, title: '作者1', images: require('../../assets/head-portrait.png') },
+        { id: 2, title: '作者2', images: require('../../assets/head-portrait1.png') }
       ]
     }
   }

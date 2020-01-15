@@ -1,5 +1,5 @@
 <template>
-  <div class="header">
+  <div id="header" class="header">
     <el-row class="header-row" :gutter="10">
       <el-col :xs="12" :sm="4" :md="4" :lg="4" :xl="4">
         <router-link to="/">

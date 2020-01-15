@@ -1,5 +1,5 @@
 <template>
-  <div class="breadcrumb">
+  <div id="breadcrumb">
     <el-row :gutter="10">
       <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
         <div class="grid-content bg-purple hidden-xs-only">
@@ -37,8 +37,8 @@ export default {
     getBreadcrumb () {
       let matched = this.$route.matched.filter(item => item.name)
       const first = matched[0]
-      if (first && first.name.trim().toLocaleLowerCase() !== 'App'.toLocaleLowerCase()) {
-        matched = [{ path: '', meta: { title: 'App' } }].concat(matched)
+      if (first && first.name.trim().toLocaleLowerCase() !== 'Index'.toLocaleLowerCase()) {
+        matched = [{ path: '', meta: { title: 'index' } }].concat(matched)
       }
       this.levelList = matched
       console.log(matched)
@@ -49,8 +49,10 @@ export default {
 
 <style scoped>
   .el-header {
-    background-color: #fff;
-    color: #333;
+    color: white;
+    background-color: #f5f5f5;
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #fff;
     text-align: center;
     line-height: 60px;
     display: flex;

@@ -1,8 +1,8 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import App from '../App'
-import Index from '../views/index/Index.vue'
-import About from '../views/About'
+import Home from '../views/Home'
+import Index from '../views/index/Index'
+import About from '../views/attention/About'
 import Hello from '../views/Hello'
 
 Vue.use(VueRouter)
@@ -11,14 +11,14 @@ export default new VueRouter({
   base: process.env.BASE_URL,
   routes: [
     {
-      path: '/',
-      redirect: 'app',
-      name: 'App',
-      component: App,
+      path: '',
+      name: 'Index',
+      redirect: 'index',
+      component: Home,
       meta: { title: '首页', icon: '/', noCache: true },
       children: [
         {
-          path: '',
+          path: '/',
           component: Index
         },
         {

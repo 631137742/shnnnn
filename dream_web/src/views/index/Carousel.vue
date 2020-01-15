@@ -2,21 +2,23 @@
   <div id="carousel">
     <el-row :gutter="10">
       <el-col :xs="5" :sm="5" :md="5" :lg="5" :xl="5">
-        <div class="grid-content bg-purple-light hidden-sm-and-down aside-row-left"></div>
+        <div class="grid-content bg-purple-light hidden-sm-and-down aside-row-left">
+        </div>
       </el-col>
       <el-col :xs="14" :sm="14" :md="14" :lg="14" :xl="14">
         <div class="grid-content bg-purple hidden-sm-and-down">
           <template>
             <el-carousel :interval="4000" type="card">
               <el-carousel-item v-for="item in slideshow" :key="item">
-                <img :src="item" alt="加载失败...">
+                <h3 class="carousel-images" :style="{ backgroundImage: 'url('+item+')' }"></h3>
               </el-carousel-item>
             </el-carousel>
           </template>
         </div>
       </el-col>
       <el-col :xs="5" :sm="5" :md="5" :lg="5" :xl="5">
-        <div class="grid-content bg-purple-light hidden-sm-and-down aside-row-right"></div>
+        <div class="grid-content bg-purple-light hidden-sm-and-down aside-row-right">
+        </div>
       </el-col>
     </el-row>
   </div>
@@ -43,7 +45,7 @@ export default {
 }
 </script>
 <style>
-  .el-carousel__item img {
+  .el-carousel__item h3 {
     color: #475669;
     font-size: 14px;
     opacity: 0.75;
@@ -51,13 +53,21 @@ export default {
     height: 100%;
     margin: 0;
   }
-
   .el-carousel__item:nth-child(2n) {
-    background-color: #99a9bf;
+    background-color: #532745;
   }
 
   .el-carousel__item:nth-child(2n+1) {
-    background-color: #d3dce6;
+    background-color: #14092f;
+  }
+  .carousel-images {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+  }
+
+  body {
+    overflow-x:hidden;
   }
   .grid-content {
     min-height: 36px;
@@ -66,6 +76,7 @@ export default {
     width: 100%;
     height: 320px;
     background: url("../../assets/light.png") no-repeat 50% 0;
+    -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
     transform-origin: 50% 0;
     animation: mygradual 4s infinite linear;
@@ -74,6 +85,7 @@ export default {
     width: 100%;
     height: 320px;
     background: url("../../assets/light.png") no-repeat 50% 0;
+    -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
     transform-origin: 50% 0;
     animation: mygradual 4s infinite linear;
