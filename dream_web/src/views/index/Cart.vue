@@ -99,6 +99,13 @@ export default {
         { id: 2, title: '作者2', images: require('../../assets/head-portrait1.png') }
       ]
     }
+  },
+  created () {
+    this.$axios.get(
+      '/api/details'
+    ).then(res => {
+      console.log(res.data)
+    })
   }
 }
 </script>

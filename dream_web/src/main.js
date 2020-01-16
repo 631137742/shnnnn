@@ -2,6 +2,7 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
+import axios from 'axios'
 // 引入echarts
 import echarts from 'echarts'
 // import ElementUI from 'element-ui'
@@ -62,6 +63,7 @@ Vue.component(BreadcrumbItem.name, BreadcrumbItem)
 Vue.component(Card.name, Card)
 Vue.component(Message.name, Message)
 
+Vue.prototype.$axios = axios
 Vue.prototype.$echarts = echarts
 Vue.prototype.$message = Message
 

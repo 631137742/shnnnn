@@ -9,33 +9,30 @@
       <el-col :xs="0" :sm="10" :md="12" :lg="12" :xl="10">
         <div class="grid-content bg-purple-light hidden-md-and-down">
           <el-tabs :tab-position="tabPosition" style="height: 100%;">
-            <el-tab-pane label="用户管理">
+            <el-tab-pane v-for="item in userManagement" :key="item.id" :label=item.userName>
               <el-tabs v-model="activeName" @tab-click="handleClick">
-                <el-tab-pane label="用户管理" name="first">
+                <el-tab-pane v-for="item in attentionRecommend" :key="item.id" :label=item.userName :name=item.name>
                   <el-card class="box-card">
                     <div v-for="o in 4" :key="o" class="text item">
                       {{'列表内容 ' + o }}
                     </div>
                   </el-card>
                 </el-tab-pane>
-                <el-tab-pane label="配置管理" name="second">配置管理</el-tab-pane>
-                <el-tab-pane label="角色管理" name="third">角色管理</el-tab-pane>
-                <el-tab-pane label="定时任务补偿" name="fourth">定时任务补偿</el-tab-pane>
               </el-tabs>
             </el-tab-pane>
-            <el-tab-pane label="配置管理">配置管理</el-tab-pane>
-            <el-tab-pane label="角色管理">角色管理</el-tab-pane>
-            <el-tab-pane label="定时任务补偿">定时任务补偿</el-tab-pane>
           </el-tabs>
         </div>
       </el-col>
       <el-col :xs="24" :sm="7" :md="6" :lg="6" :xl="7">
         <div class="grid-content bg-purple hidden-lg-and-up">
           <el-tabs :tab-position="tabPosition" style="height: 200px;">
-            <el-tab-pane label="用户管理">用户管理</el-tab-pane>
-            <el-tab-pane label="配置管理">配置管理</el-tab-pane>
-            <el-tab-pane label="角色管理">角色管理</el-tab-pane>
-            <el-tab-pane label="定时任务补偿">定时任务补偿</el-tab-pane>
+            <el-tab-pane v-for="item in userManagement" :key="item.id" :label=item.userName>
+              <el-card class="box-card">
+                <div v-for="o in 4" :key="o" class="text item">
+                  {{'列表内容 ' + o }}
+                </div>
+              </el-card>
+            </el-tab-pane>
           </el-tabs>
         </div>
       </el-col>
@@ -55,7 +52,19 @@ export default {
   data () {
     return {
       tabPosition: 'left',
-      activeName: 'second'
+      activeName: 'second',
+      userManagement: [
+        { id: 1, name: 'first', userName: '小一' },
+        { id: 2, name: 'second', userName: '小二' },
+        { id: 3, name: 'third', userName: '小三' },
+        { id: 4, name: 'fourth', userName: '小四' },
+        { id: 5, name: 'fifth', userName: '小五' }
+      ],
+      attentionRecommend: [
+        { id: 1, name: 'first', userName: '第一推荐' },
+        { id: 2, name: 'second', userName: '第二推荐' },
+        { id: 3, name: 'third', userName: '第三推荐' }
+      ]
     }
   },
   methods: {
