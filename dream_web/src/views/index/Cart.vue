@@ -5,7 +5,7 @@
         <div class="grid-content bg-purple hidden-md-only"></div>
       </el-col>
       <el-col :xs="24" :sm="24" :md="6" :lg="4" :xl="4">
-        <div class="grid-content bg-purple">
+        <div class="grid-content bg-purple hidden-sm-and-down">
           <el-card class="box-card">
             <div v-for="item in images" :key="item.id" class="text item">
               <router-link to="#"><img class="board-images" :src="item.images" alt="加载失败..."></router-link>
@@ -51,7 +51,7 @@
           </el-card>
         </div>
       </el-col>
-      <el-col :xs="24" :sm="24" :md="6" :lg="4" :xl="4">
+      <el-col :xs="24" :sm="24" :md="6" :lg="5" :xl="5">
         <div class="grid-content bg-purple hidden-sm-and-down">
           <el-card class="box-card">
             <h2>
@@ -61,19 +61,29 @@
               推荐作者
             </h2>
             <div v-for="item in recommend" :key="item.id" class="text item aside-list">
-              <router-link to="#">
-                <img class="head-portrait" :src="item.images" alt="头像加载失败">
-                <div class="aside-lally">
-                  <h3>{{'列表内容 ' + item.title }}</h3>
-                  <p>1k+喜欢</p>
-                </div>
-              </router-link>
-              <router-link class="aside-follow" to="#">关注+</router-link>
+              <el-row :gutter="0" type="flex" align="bottom">
+                <el-col :xs="24" :sm="24" :md="24" :lg="19" :xl="18">
+                  <div class="grid-content bg-purple">
+                    <router-link to="#">
+                      <img class="head-portrait" :src="item.images" alt="头像加载失败">
+                      <div class="aside-lally">
+                        <h3>{{'列表内容 ' + item.title }}</h3>
+                        <p>1k+喜欢</p>
+                      </div>
+                    </router-link>
+                  </div>
+                </el-col>
+                <el-col :offset="3" :xs="4" :sm="4" :md="4" :lg="5" :xl="6">
+                  <div class="grid-content bg-purple-light hidden-md-and-down">
+                    <router-link class="aside-follow" to="#">&nbsp;关注+</router-link>
+                  </div>
+                </el-col>
+              </el-row>
             </div>
           </el-card>
         </div>
       </el-col>
-      <el-col :xs="4" :sm="2" :md="3" :lg="3" :xl="3">
+      <el-col :xs="4" :sm="2" :md="3" :lg="2" :xl="2">
         <div class="grid-content bg-purple hidden-md-only"></div>
       </el-col>
     </el-row>
@@ -95,7 +105,7 @@ export default {
         { id: 4, images: require('../../assets/banner-s-club-aa8bdf19f8cf729a759da42e4a96f366.png') }
       ],
       recommend: [
-        { id: 1, title: '作者1', images: require('../../assets/head-portrait.png') },
+        { id: 1, title: '作者shnnnn', images: require('../../assets/head-portrait.png') },
         { id: 2, title: '作者2', images: require('../../assets/head-portrait1.png') }
       ]
     }
@@ -163,9 +173,8 @@ export default {
     margin-right: 10px;
   }
   .aside-list {
-    width: 100%;
-    height: 100%;
     display: flex;
+    flex-wrap: nowrap;
     align-items: center;
   }
   .aside-list a {
@@ -177,8 +186,6 @@ export default {
     flex-wrap: nowrap;
   }
   .aside-list .aside-follow {
-    margin-left: 10%;
-    align-items: flex-end;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -190,10 +197,11 @@ export default {
     border-radius: 50%;
   }
   .aside-list a .aside-lally {
+    width: 100%;
+    height: 100%;
     margin: auto 10px;
     text-overflow: ellipsis;
     white-space:nowrap;
-    overflow:hidden;
   }
   .aside-list a .aside-lally p {
     color: #969696;

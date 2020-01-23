@@ -2,7 +2,8 @@
   <div id="carousel">
     <el-row :gutter="10">
       <el-col :xs="5" :sm="5" :md="5" :lg="5" :xl="5">
-        <div class="grid-content bg-purple-light hidden-sm-and-down aside-row-left">
+        <div class="grid-content bg-purple-light hidden-sm-and-down">
+          <div class="aside-row-left"></div>
         </div>
       </el-col>
       <el-col :xs="14" :sm="14" :md="14" :lg="14" :xl="14">
@@ -17,7 +18,8 @@
         </div>
       </el-col>
       <el-col :xs="5" :sm="5" :md="5" :lg="5" :xl="5">
-        <div class="grid-content bg-purple-light hidden-sm-and-down aside-row-right">
+        <div class="grid-content bg-purple-light hidden-sm-and-down">
+          <div class="aside-row-right"></div>
         </div>
       </el-col>
     </el-row>

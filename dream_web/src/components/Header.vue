@@ -24,9 +24,9 @@
       </el-col>
       <el-col :xs="12" :sm="4" :md="4" :lg="4" :xl="4">
         <div class="grid-content bg-purple-light header-drop-down-list">
-          <el-dropdown @command="handleCommand">
+          <el-dropdown class="el-dropdown-link">
             <span class="el-dropdown-link">
-              下拉菜单
+              <router-link to="/login">登录</router-link>
               <i>
                 <svg class="icon" aria-hidden="true">
                   <use xlink:href="#iconicon-test7"></use>
@@ -34,10 +34,30 @@
               </i>
             </span>
             <el-dropdown-menu slot="dropdown">
-              <el-dropdown-item command="a" divided>我的主页</el-dropdown-item>
-              <el-dropdown-item command="b" divided>修改密码</el-dropdown-item>
-              <el-dropdown-item command="c" divided>设置</el-dropdown-item>
-              <el-dropdown-item command="d" divided disabled>退出</el-dropdown-item>
+              <el-dropdown-item>
+                <svg class="icon" aria-hidden="true">
+                  <use xlink:href="#iconbianpinghuatubiaosheji-17"></use>
+                </svg>
+                <router-link class="dropdown-list" to="/">&nbsp;我的主页</router-link>
+              </el-dropdown-item>
+              <el-dropdown-item>
+                <svg class="icon" aria-hidden="true">
+                  <use xlink:href="#iconbianpinghuatubiaosheji-15"></use>
+                </svg>
+                <router-link class="dropdown-list" to="/">&nbsp;修改密码</router-link>
+              </el-dropdown-item>
+              <el-dropdown-item>
+                <svg class="icon" aria-hidden="true">
+                  <use xlink:href="#iconbianpinghuatubiaosheji-25"></use>
+                </svg>
+                <router-link class="dropdown-list" to="/">&nbsp;设置</router-link>
+              </el-dropdown-item>
+              <el-dropdown-item>
+                <svg class="icon" aria-hidden="true">
+                  <use xlink:href="#iconbianpinghuatubiaosheji-4"></use>
+                </svg>
+                <router-link class="dropdown-list" to="/">&nbsp;退出</router-link>
+              </el-dropdown-item>
             </el-dropdown-menu>
           </el-dropdown>
         </div>
@@ -82,6 +102,14 @@ export default {
   .el-dropdown-link {
     cursor: pointer;
     color: #409EFF;
+  }
+  .el-dropdown-link a {
+    color: white;
+    text-decoration: none;
+  }
+  .dropdown-list {
+    color: black;
+    text-decoration: none;
   }
   .header-drop-down-list{
     display: flex;

@@ -2,7 +2,8 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home'
 import Index from '../views/index/Index'
-import About from '../views/Find/About'
+import Login from '../views/login/Login'
+import About from '../views/about/About'
 import Attention from '../views/attention/Attention'
 
 Vue.use(VueRouter)
@@ -20,6 +21,12 @@ export default new VueRouter({
         {
           path: '/',
           component: Index
+        },
+        {
+          path: '/login',
+          name: 'Login',
+          component: Login,
+          meta: { title: 'login页', icon: 'login', noCache: true }
         },
         {
           path: '/about',
