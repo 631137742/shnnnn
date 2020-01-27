@@ -29,7 +29,10 @@ app.get("/imageList", (req, res) => {
     //1:将轮播图中所需图片 复制public/img
     //2:查询
     var list = [
-        { id: 1, img_url: "http://127.0.0.1:3000/img/kefuf.gif" }
+        { id: 1, img_url: "http://127.0.0.1:3000/img/advertising/grid-content1.jpg" },
+        { id: 2, img_url: "http://127.0.0.1:3000/img/advertising/grid-content2.jpg" },
+        { id: 3, img_url: "http://127.0.0.1:3000/img/advertising/grid-content3.jpg" },
+        { id: 4, img_url: "http://127.0.0.1:3000/img/advertising/grid-content4.jpg" }
     ];
     res.send(list);
 });
@@ -40,7 +43,7 @@ app.get("/login", (req, res) => {
     var uname = req.query.uname;
     var upwd = req.query.upwd;
     //sql
-    var sql = " SELECT id FROM boy_login";
+    var sql = " SELECT id FROM shn_login";
     sql += " WHERE uname = ? AND upwd = md5(?)";
     pool.query(sql, [uname, upwd], (err, result) => {
         if (err) throw err;

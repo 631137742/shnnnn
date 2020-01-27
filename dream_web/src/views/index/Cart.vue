@@ -8,7 +8,7 @@
         <div class="grid-content bg-purple hidden-sm-and-down">
           <el-card class="box-card">
             <div v-for="item in images" :key="item.id" class="text item">
-              <router-link to="#"><img class="board-images" :src="item.images" alt="加载失败..."></router-link>
+              <router-link to="#"><img class="board-images" :src="item.img_url" alt="加载失败..."></router-link>
             </div>
           </el-card>
         </div>
@@ -98,24 +98,25 @@ export default {
   },
   data () {
     return {
-      images: [
-        { id: 1, images: require('../../assets/banner-s-club-aa8bdf19f8cf729a759da42e4a96f366.png') },
-        { id: 2, images: require('../../assets/banner-s-club-aa8bdf19f8cf729a759da42e4a96f366.png') },
-        { id: 3, images: require('../../assets/banner-s-club-aa8bdf19f8cf729a759da42e4a96f366.png') },
-        { id: 4, images: require('../../assets/banner-s-club-aa8bdf19f8cf729a759da42e4a96f366.png') }
-      ],
+      images: [],
       recommend: [
         { id: 1, title: '作者shnnnn', images: require('../../assets/head-portrait.png') },
         { id: 2, title: '作者2', images: require('../../assets/head-portrait1.png') }
       ]
     }
   },
+  methods: {
+    handleImage () {
+      this.$axios.get(
+        '/api/imageList'
+      ).then(res => {
+        console.log('广告栏已被过滤器拦截')
+        this.images = res.data
+      })
+    }
+  },
   created () {
-    this.$axios.get(
-      '/api/details'
-    ).then(res => {
-      console.log(res.data)
-    })
+    this.handleImage()
   }
 }
 </script>
