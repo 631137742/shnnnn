@@ -107,12 +107,18 @@ export default {
   },
   methods: {
     handleImage () {
-      this.$axios.get(
-        '/api/imageList'
-      ).then(res => {
-        console.log('广告栏已被过滤器拦截')
-        this.images = res.data
-      })
+      // this.$axios.get(
+      //   '/api/imageList'
+      // ).then(res => {
+      //   console.log('广告栏已被过滤器拦截')
+      //   this.images = res.data
+      // })
+      this.images = [
+        { id: 1, img_url: require('@/assets/advertising/grid-content1.jpg') },
+        { id: 2, img_url: require('@/assets/advertising/grid-content2.jpg') },
+        { id: 3, img_url: require('@/assets/advertising/grid-content3.jpg') },
+        { id: 4, img_url: require('@/assets/advertising/grid-content4.jpg') }
+      ]
     }
   },
   created () {

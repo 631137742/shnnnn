@@ -10,7 +10,7 @@
         <div class="grid-content bg-purple-light header-button">
           <router-link to="/about">发现</router-link>
           <router-link to="/attention">关注</router-link>
-          <router-link to="/">消息</router-link>
+          <router-link to="/login">消息</router-link>
         </div>
       </el-col>
       <el-col :xs="0" :sm="1" :md="8" :lg="8" :xl="8">

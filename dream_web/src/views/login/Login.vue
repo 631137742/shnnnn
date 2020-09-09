@@ -1,5 +1,8 @@
 <template>
   <div id="login">
+    <h1>
+      登录页
+    </h1>
     <input type="text">
   </div>
 </template>
